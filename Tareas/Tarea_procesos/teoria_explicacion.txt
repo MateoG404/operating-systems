@@ -6,3 +6,5 @@ fork()  -> Crea un nuevo proceso "hijo" el cual es duplicado del "padre"
         -> Retorna 0 y el PID del hijo si el proceso hijo se generó correctamente sino un -1
 
 Necesario usar #include <<unistd.h>
+
+wait(int *wstatus); -> Esperar un padre hasta que sus hijos terminen
