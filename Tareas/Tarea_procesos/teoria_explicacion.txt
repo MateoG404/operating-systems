@@ -1,0 +1,8 @@
+
+La funcion fork(void) crea procesos
+
+fork()  -> Crea un nuevo proceso "hijo" el cual es duplicado del "padre"
+        -> Los dos procesos (padre e hijo) tienen PID diferentes
+        -> Retorna 0 y el PID del hijo si el proceso hijo se generó correctamente sino un -1
+
+Necesario usar #include <<unistd.h>
