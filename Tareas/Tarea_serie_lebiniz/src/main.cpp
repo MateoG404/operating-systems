@@ -66,7 +66,7 @@ int main()
             for ( j ; j <= m; ++j){
                 
                 val_cal += pow(-1, j) / (2 * j + 1);
-                //printf("val_cal %f, j %i \n",val_cal,j);   
+               // printf("val_cal %f, j %i \n",val_cal,j);   
             }
             // Se envia a la tuberia el valor calculado 
             //cout << "Valor de la " << i << " parte es " << val_cal <<endl;
@@ -90,7 +90,7 @@ int main()
         close(pipeF[i][1]);
         double val_cal ;
         read(pipeF[i][0],&val_cal,sizeof(val_cal));
-        //cout << "Valor de la " << i << " parte es " << val_cal <<endl;
+        cout << "Valor de la " << i << " parte es " << val_cal <<endl;
         val_fin += val_cal;
 
     }
