@@ -21,6 +21,7 @@ int carga(){
     for(i=0; i < 1e09; i++)
         x = x + sin(i);
 };
+
 // Función que va a ejecutar el Hilo
 
 void * funcion(void *datos)
