@@ -11,12 +11,13 @@
 #include <strings.h>
 
 #define PORT 3535
+#define serverIP "127.0.0.1"
 #define BACKLOG 12
 
 struct sockaddr_in client; 
 
 
-int main(int argc, char *argv[]){
+int main(){
     // Variables
     
     int clientfd;
@@ -39,9 +40,14 @@ int main(int argc, char *argv[]){
     
     client.sin_family = AF_INET;
     client.sin_port = htons(PORT);
+    
+    // Convertir dirección IP a formato valido para serverAddress
 
-    inet_aton(argv[1],&client.sin_addr);
-
+    if (inet_pton(AF_INET, serverIP, &(client.sin_addr)) < 0 ){
+        perror("Error configuracion servidor \n");
+        exit(-1);
+    }
+    // Crear conexión 
     if (connect(clientfd, (struct sockaddr*)&client,(socklen_t)sizeof(struct sockaddr)) < 0){
         perror("Error conexion servidor");
         exit(-1);

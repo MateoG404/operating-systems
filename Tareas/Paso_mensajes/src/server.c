@@ -21,6 +21,7 @@ int main(){
     
     int serverfd, clientfd;
     socklen_t tamano;
+    struct sockaddr_in serverAddress, clientAddress; // Conexión a servidor
     ssize_t r_send ;
 
     printf("Inicio Proceso Servidor \n");
@@ -55,8 +56,10 @@ int main(){
     }
 
     // Creación accept
-    clientfd = accept(serverfd,(struct sockaddr*)&client,&tamano);
+    socklen_t clientAddressLength = sizeof(clientAddress);
+    clientfd = accept(serverfd,(struct sockaddr*)&client,&clientAddressLength  );
 
+    // 
     if (clientfd < 0 ){
         perror("Error accept");
         exit(-1);
