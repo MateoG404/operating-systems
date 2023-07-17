@@ -1,0 +1,8 @@
+Inicio del programa 
+PID del padre es 19623 
+PID del hijo es 19624
+Inicio del programa 
+PID del padre es 19623 
+PID del padre es 19623 
+Saludos desde 11 : 19
+Mensaje del hijo es : Saludos desde 11 : 19 
